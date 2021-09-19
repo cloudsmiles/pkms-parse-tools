@@ -20,7 +20,7 @@ type SyncPair struct {
 	Id        string `json:"id,omitempty"`      // 生成的唯一id
 	Picture   string `json:"picture,omitempty"` // 图片地址
 	Name      string `json:"name,omitempty"`    // 名称
-	Source      string `json:"source,omitempty"`    // 来源
+	Source    string `json:"source,omitempty"`  // 来源
 	Role      string `json:"role,omitempty"`    // 定位
 	Stats     *Attr  `json:"stats,omitempty"`   // 白值
 	Skill     *Attr  `json:"skill,omitempty"`   // 技能
