@@ -20,8 +20,8 @@ type SyncPair struct {
 	Id        string `json:"id,omitempty"`      // 生成的唯一id
 	Picture   string `json:"picture,omitempty"` // 图片地址
 	Name      string `json:"name,omitempty"`    // 名称
+	Source      string `json:"source,omitempty"`    // 来源
 	Role      string `json:"role,omitempty"`    // 定位
-	Type      string `json:"type,omitempty"`    // 属性
 	Stats     *Attr  `json:"stats,omitempty"`   // 白值
 	Skill     *Attr  `json:"skill,omitempty"`   // 技能
 	Passive   *Attr  `json:"passive,omitempty"` // 被动技能
@@ -84,11 +84,11 @@ func parseSTLMarkdown(filePth string) ([]*SyncPair, error) {
 				continue
 			}
 			if res := reg2.FindAllStringSubmatch(line, -1); res != nil {
-				nextSyncPair.Role = res[0][1]
+				nextSyncPair.Source = res[0][1]
 				continue
 			}
 			if res := reg3.FindAllStringSubmatch(line, -1); res != nil {
-				nextSyncPair.Type = res[0][1]
+				nextSyncPair.Role = res[0][1]
 				continue
 			}
 			if res := reg4.FindAllStringSubmatch(line, -1); res != nil {
