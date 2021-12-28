@@ -32,6 +32,8 @@ type Attr struct {
 }
 
 func ParseSTLMarkdown(filePth string) ([]*SyncPair, error) {
+	fmt.Println("----------------- 解析markdown -----------------")
+
 	f, err := os.Open(filePth)
 	if err != nil {
 		return nil, err
@@ -46,7 +48,7 @@ func ParseSTLMarkdown(filePth string) ([]*SyncPair, error) {
 	reg2 := regexp.MustCompile(`^来源\S(.+)`)
 	reg3 := regexp.MustCompile(`^定位\S(.+)`)
 	reg4 := regexp.MustCompile(`^#+\s白值\S(.+)`)
-	reg5 := regexp.MustCompile(`^#+\s技能组\S(.+)`)
+	reg5 := regexp.MustCompile(`^#+\s技能组\S(.?)`)
 	reg6 := regexp.MustCompile(`^#+\s被动\S(.+)`)
 	reg7 := regexp.MustCompile(`^#+\s石盘\S(.+)`)
 	reg8 := regexp.MustCompile(`^#+\s专精度\S(.+)`)

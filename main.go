@@ -9,18 +9,20 @@ import (
 )
 
 const (
-	input_file = "../pkms/STL-evaluation.md"
+	inputFile = "./static/STL-evaluation.md"
 
-	output_file = "./resource.js"
+	outputFile = "./static/resource.js"
+
+	pictureFile = "./static/picture.txt"
 )
 
 func main() {
-	arr, err := internal.ParseSTLMarkdown(input_file)
+	arr, err := internal.ParseSTLMarkdown(inputFile)
 	if err != nil {
 		fmt.Printf("error: %v", err)
 		return
 	}
-	internal.FillPicture(arr)
+	internal.FillPicture(arr, pictureFile)
 
 	_res, err := json.Marshal(arr)
 	if err != nil {
@@ -28,7 +30,7 @@ func main() {
 		return
 	}
 	_res = append([]byte("export var out = "), _res...)
-	err = ioutil.WriteFile(output_file, _res, 0666)
+	err = ioutil.WriteFile(outputFile, _res, 0666)
 	if err != nil {
 		fmt.Printf("error: %v", err)
 		return
