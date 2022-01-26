@@ -15,7 +15,7 @@ type SyncPair struct {
 	Source    string `json:"source,omitempty"`  // 来源
 	Role      string `json:"role,omitempty"`    // 定位
 	Stats     *Attr  `json:"stats,omitempty"`   // 白值
-	Skill     *Attr  `json:"skill,omitempty"`   // 技能
+	Skill     *Attr  `json:"skill,omitempty"`   // 招式
 	Passive   *Attr  `json:"passive,omitempty"` // 被动技能
 	Grid      *Attr  `json:"grid,omitempty"`    // 石盘
 	Focus     *Attr  `json:"focus,omitempty"`   // 专精度
@@ -48,7 +48,7 @@ func ParseSTLMarkdown(filePth string) ([]*SyncPair, error) {
 	reg2 := regexp.MustCompile(`^来源\S(.+)`)
 	reg3 := regexp.MustCompile(`^定位\S(.+)`)
 	reg4 := regexp.MustCompile(`^#+\s白值\S(.+)`)
-	reg5 := regexp.MustCompile(`^#+\s技能组\S(.?)`)
+	reg5 := regexp.MustCompile(`^#+\s招式组\S(.?)`)
 	reg6 := regexp.MustCompile(`^#+\s被动\S(.+)`)
 	reg7 := regexp.MustCompile(`^#+\s石盘\S(.+)`)
 	reg8 := regexp.MustCompile(`^#+\s专精度\S(.+)`)
