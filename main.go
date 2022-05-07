@@ -9,6 +9,8 @@ import (
 )
 
 const (
+	sourceUrl = "https://raw.githubusercontent.com/HsinChang/pkms/main/STL-evaluation.md"
+
 	inputFile = "./static/STL-evaluation.md"
 
 	outputFile = "./static/resource.js"
@@ -17,6 +19,12 @@ const (
 )
 
 func main() {
+	err := internal.DownloadMarkdown(sourceUrl, inputFile)
+	if err != nil {
+		fmt.Printf("error: %v", err)
+		return
+	}
+
 	arr, err := internal.ParseSTLMarkdown(inputFile)
 	if err != nil {
 		fmt.Printf("error: %v", err)

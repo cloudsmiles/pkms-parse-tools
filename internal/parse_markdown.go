@@ -40,7 +40,7 @@ func ParseSTLMarkdown(filePth string) ([]*SyncPair, error) {
 	}
 	defer f.Close()
 
-	//解析正则表达式
+	// 解析正则表达式
 	// 匹配拍组名称
 	remove0 := regexp.MustCompile(`^\s*$`)
 	remove1 := regexp.MustCompile(`^\[回到目录]\(#目录\)$`)
@@ -174,14 +174,14 @@ func ParseSTLMarkdown(filePth string) ([]*SyncPair, error) {
 
 	for _, syncPair := range syncPairList {
 		fmt.Printf("%v\n", syncPair)
-		//fmt.Printf("%v\n", syncPair.Stats)
-		//fmt.Printf("%v\n", syncPair.Skill)
-		//fmt.Printf("%v\n", syncPair.Passive)
-		//fmt.Printf("%v\n", syncPair.Grid)
-		//fmt.Printf("%v\n", syncPair.Focus)
-		//fmt.Printf("%v\n", syncPair.Depend)
-		//fmt.Printf("%v\n", syncPair.Common)
-		//fmt.Printf("%v\n", syncPair.Score)
+		// fmt.Printf("%v\n", syncPair.Stats)
+		// fmt.Printf("%v\n", syncPair.Skill)
+		// fmt.Printf("%v\n", syncPair.Passive)
+		// fmt.Printf("%v\n", syncPair.Grid)
+		// fmt.Printf("%v\n", syncPair.Focus)
+		// fmt.Printf("%v\n", syncPair.Depend)
+		// fmt.Printf("%v\n", syncPair.Common)
+		// fmt.Printf("%v\n", syncPair.Score)
 	}
 	fmt.Println("len: ", len(syncPairList))
 
